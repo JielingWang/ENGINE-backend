@@ -87,9 +87,9 @@ app.post('/api/testNotification',function(req,res){
 app.post('/api/users',function(req,res){
     var User_JSON = req.body;
 
-    Users.addUser(User_JSON,function(err,user){
-        if(err){
-            res.json({"status":false, "data":err});
+    Users.addUser(User_JSON,function(value,user){
+        if(value){
+            res.json({"status":true, "data":value});
         }else{
             res.json({"status":true, "data":user});
         }

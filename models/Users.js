@@ -166,7 +166,7 @@ module.exports.addUser = async function (user, callback) {
     const results = await user_exists_inCollection_byEmail_byUWID(user.email, user.UWID)
     if(results)
     {
-        // callback(results,null)
+        callback(results,null)
         return;
     }
 
